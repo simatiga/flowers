@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <!-- <router-view/> -->
-    <NavTmp />
+    <router-view/>
+    <Nav />
     
     <div class="menu">
         <!-- <a>Home</a>
@@ -38,7 +38,7 @@
 
 // import data from './data/oneroom.js';
 import da_prof_col from './data/da_prof_col.json'
-import NavTmp from './views/nav.vue'
+import Nav from './views/nav';
 import Page1 from './views/page1.vue'
 import Page2 from './views/page2.vue'
 
@@ -65,7 +65,7 @@ export default {
   },
   
   components: {
-    NavTmp, 
+    Nav, 
     Page1, 
   },
 }
@@ -81,14 +81,15 @@ export default {
 }
 
 .menu{
-  background: gray;
+  background: yellowgreen;
   padding:15px;
   border-radius:5px;
 }
 
 .menu a {
-  color: white;
+  color: Block;
   padding: 10px;
+  font-size: 20px;
 }
 
 .room-img {
@@ -108,5 +109,17 @@ export default {
   border-radius: 8px;
   padding: 20px;
 }
+
+
+  /* 반응형 최대크기 */
+  #app { margin:0 auto; width:750px; min-height:100%; padding-top:71px; border-left:1px #D8D8D8 solid; border-right:1px #D8D8D8 solid; positon:relative; text-align:center; }
+
+  /* 여백제거 + 드래그방지 */
+  body{ padding:0; margin:0; -ms-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; user-select: none; }
+
+  /* 반응형 시작 */
+  @media(max-width:750px){
+    #app{ width:100%; border-left:0; border-right:0; }
+  }
 
 </style>

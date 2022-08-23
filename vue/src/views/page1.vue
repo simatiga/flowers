@@ -1,10 +1,7 @@
 <template>
     <div id="page1">
         <div id="page1-head">
-            Data Profiling Report
-        </div>
-        <div id="page1-head">
-            Data Profiling Report
+            page1 ------- Data Profiling Report
         </div>
         <br>
         <div>
@@ -38,6 +35,7 @@
 </template>
 
 <script>
+    import $ from 'jquery';
     import da_prof_col from './../data/da_prof_col.json'
     import css from './style.css'
     // $('table').DataTable();
@@ -46,6 +44,17 @@
 
     export default {
         name: 'page1',
+        mounted(){
+            /* Nav 처리 */
+            $(".nav-box-circle").removeClass("nav-box-selected");
+            for(var x=0;x<$(".nav-box-circle").length;x++){
+                if(!$(".nav-box-circle").eq(x).hasClass("nav-box-default")){
+                    $(".nav-box-circle").eq(x).addClass("nav-box-default")
+                }
+            }
+            $(".nav-box-circle").eq(0).removeClass("nav-box-default");
+            $(".nav-box-circle").eq(0).addClass("nav-box-selected");
+        }, 
         data() {
             return {
                 da결과 : da_prof_col,

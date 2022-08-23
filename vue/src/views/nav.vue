@@ -3,9 +3,9 @@
         <div class="nav-box">
             <router-link to="/page1"><div class="nav-box-circle nav-box-default">P1</div></router-link>
         </div>
-        <!-- <div class="nav-box">
+        <div class="nav-box">
             <router-link to="/page2"><div class="nav-box-circle nav-box-default">P2</div></router-link>
-        </div> -->
+        </div>
     </div>
 </template>
 
