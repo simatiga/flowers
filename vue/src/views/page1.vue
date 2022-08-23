@@ -2,29 +2,33 @@
     <div id="page1">
         <div id="page1-head">
             Data Profiling Report
-            <b-button>Button</b-button>
+        </div>
+        <div id="page1-head">
+            Data Profiling Report
         </div>
         <br>
         <div>
-            <b-table-simple hover small caption-top responsive>
-                <b-thead head-variant="dark">
-                    <b-tr>
-                        <b-th colspan="2">Table Name</b-th>
-                        <b-th colspan="2">Column Name</b-th>
-                        <b-th colspan="2">Null Rate</b-th>
-                        <b-th colspan="2">Empty Rate</b-th>
-                    </b-tr>
-                </b-thead>
-                <b-tbody>
-                    <b-tr v-for="(a,i) in da결과" :key="i">
-                        <b-th colspan="2">{{da결과[i].tab_nm}}</b-th>
-                        <b-th colspan="2">{{da결과[i].col_nm}}</b-th>
-                        <b-th colspan="2">{{da결과[i].rate_null}}%</b-th>
-                        <b-th colspan="2">{{da결과[i].rate_empty}}%</b-th>
-                    </b-tr>
-                </b-tbody>
-            </b-table-simple>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="pin">Table Name</th>
+                        <th>Column Name</th>
+                        <th>Null Rate</th>
+                        <th>Empty Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(a,i) in da결과" :key="i">
+                        <td>{{da결과[i].tab_nm}}</td>
+                        <td>{{da결과[i].col_nm}}</td>
+                        <td>{{da결과[i].rate_null}}%</td>
+                        <td>{{da결과[i].rate_empty}}%</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+        
         <!-- <div v-for="(a,i) in da결과" :key="i">
             <h4 :style="스타일" @click="modalWinOpen=true">{{da결과[i].tab_nm}}</h4>
             <p>{{da결과[i].col_nm}}</p> / null비율 : {{da결과[i].rate_null}}%, empty비율 : {{da결과[i].rate_empty}}%
@@ -35,6 +39,10 @@
 
 <script>
     import da_prof_col from './../data/da_prof_col.json'
+    import css from './style.css'
+    // $('table').DataTable();
+
+    // app.use(BootstrapVue3)
 
     export default {
         name: 'page1',
@@ -43,14 +51,14 @@
                 da결과 : da_prof_col,
             }
         },
+        // methods: {
+        // },
+        components: {
+        },
+        directives: { 
+        },
     }
-    // methods: {
-    // },
-    
-    // components: {
-    // }
-
-    
+   
 </script>
 
 <style scoped>
