@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = {
     publicPath: '',
-    outputDir: './docs'
+    outputDir: './docs',
+    lintOnSave:false
 }
